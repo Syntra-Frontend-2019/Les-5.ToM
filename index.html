@@ -7,6 +7,51 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>To Do List oefening</h1>
+    <h3>Title</h3>
+    <input type="text" id="taak">
+    <h3>Todo</h3>
+    <textarea name="" id="beschrijving" cols="30" rows="10"></textarea>
+    <p>
+    <button onclick="toevoegenLijst();">Toevoegen</button>
+    </p>
+    <ul id="lijst">
+    </ul>
+
+<script>
+        var finaleLijst = [];
+        var taakToevoegen = document.querySelector("#taak");
+        var beschrijvingToevoegen = document.querySelector("#beschrijving");
+        var lijst = document.querySelector("#lijst")
+
+        function toevoegenLijst(){
+            var nieuweLijst = taakToevoegen.value + " " + beschrijvingToevoegen.value;
+            finaleLijst.push(nieuweLijst);
+            taakToevoegen.value = ""; // leegmaken van veld
+            beschrijvingToevoegen.value = ""; //leegmaken van veld
+
+            lijstAfdrukken();
+        }
+
+            
+
+        function lijstAfdrukken(){
+            lijst.innerHTML = "<li>" + finaleLijst.join("</li><li>") + "</li>";
+        }
+
+
+
+       /* var html="";
+       for(var i=0 < autos.lenght; i++){
+           html += "Je kijkt naar een" + autos[i].fullName();
+
+           list.innerHTML = html
+       }
+       */
+
+
+</script>
+
+
 </body>
 </html>
